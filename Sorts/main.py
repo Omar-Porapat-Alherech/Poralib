@@ -5,8 +5,6 @@ def insertion_sort(input_array, ascending_order=True):
     for arr_pos in range(1, len(input_array)):
         key = input_array[arr_pos]
         arr_pos_left = arr_pos - 1
-        x = input_array[arr_pos_left]
-        comparison = input_array[arr_pos_left] > key and arr_pos_left >= 0
         # We can sort in descending order
         if not ascending_order:
             while input_array[arr_pos_left] < key and arr_pos_left >= 0:
@@ -18,6 +16,7 @@ def insertion_sort(input_array, ascending_order=True):
                 arr_pos_left -= 1
         input_array[arr_pos_left + 1] = key
     return input_array
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
