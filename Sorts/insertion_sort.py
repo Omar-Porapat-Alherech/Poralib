@@ -1,7 +1,17 @@
+import logging
+
+module_logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    datefmt='%m/%d/%Y %I:%M:%S %p')
+
+
 # Insertion Sort
-# O(1) Space Complexity as it sorts in the array it came from, besides the fact that python is pass by value.
-# TODO Complete comments + implement tests.
+# O(1) Space Complexity as it sorts in the array it came from
+# o(n) Time best case when array is already sorted.
+# o(n^2) worst case/avg , when array is sorted in reverse order
 def insertion_sort(input_array, ascending_order=True):
+
     for arr_pos in range(1, len(input_array)):
         key = input_array[arr_pos]
         arr_pos_left = arr_pos - 1
@@ -16,11 +26,3 @@ def insertion_sort(input_array, ascending_order=True):
                 arr_pos_left -= 1
         input_array[arr_pos_left + 1] = key
     return input_array
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    input_arr = [10, 50, 20, 5, 100, 23, 65, 15]
-    x = insertion_sort(input_arr, ascending_order=False)
-    print(input_arr)
-    print(x)
