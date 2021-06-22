@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.DEBUG,
 def quick_sort(input_array, start, end):
     module_logger.info("Starting quick sort on %s.", input_array)
     if len(input_array) == 1:
-        return arr
+        return input_array
     if start < end:
         module_logger.info("Finding midpoint for partition.")
         fracture = partition(input_array, start, end)
@@ -27,7 +27,6 @@ def quick_sort(input_array, start, end):
         module_logger.info("Complete!")
 
 
-
 def swap(arr, a, b):
     arr[a], arr[b] = arr[b], arr[a]
 
@@ -39,8 +38,9 @@ def partition(arr, start, end):
         if arr[arr_pos] <= pivot:
             arr_pos_left += 1
             swap(arr, arr_pos, arr_pos_left)
-    swap(arr, arr_pos_left+1, end)
+    swap(arr, arr_pos_left + 1, end)
     return arr_pos_left + 1
+
 
 if __name__ == "__main__":
     pass

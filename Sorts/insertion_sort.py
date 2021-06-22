@@ -29,6 +29,6 @@ def insertion_sort(input_array, ascending_order=True):
         input_array[arr_pos_left + 1] = key
     return input_array
 
+
 if __name__ == "__main__":
-    module_logger
     pass
